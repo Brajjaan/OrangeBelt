@@ -4,29 +4,25 @@ class Program
 {
     static void Main(string[] args)
     {
-        AbilityContainer<AttackAbility> attackContainer = new();
+        AbilityContainer<IAbility> abilityContainer = new();
         AttackAbility frostSpike = new("Frost Spike", "Deals 50 points of physical and stamina damage");
         AttackAbility slash = new("Slash", "Deals 100 points of physical damage");
-        attackContainer.AddAbility(frostSpike);
-        attackContainer.AddAbility(slash);
+        abilityContainer.AddAbility(frostSpike);
+        abilityContainer.AddAbility(slash);
         
-        AbilityContainer<HealAbility> healContainer = new();
         HealAbility mend = new("Mend", "Heals 50 of health and restores 5 points of health overtime for 10s");
         HealAbility heal = new("Heal", "Heals 100 points of health");
-        healContainer.AddAbility(mend);
-        healContainer.AddAbility(heal);
+        abilityContainer.AddAbility(mend);
+        abilityContainer.AddAbility(heal);
         
         Console.WriteLine("Printing abilities:");
-        attackContainer.PrintAbilities();
-        healContainer.PrintAbilities();
+        abilityContainer.PrintAbilities();
         
         Console.WriteLine();
-        attackContainer.RemoveAbility(frostSpike);
-        healContainer.RemoveAbility(mend);
+        abilityContainer.RemoveAbility(frostSpike);
+        abilityContainer.RemoveAbility(mend);
         
         Console.WriteLine("Printing new abilities:");
-        attackContainer.PrintAbilities();
-        healContainer.PrintAbilities();
-        
+        abilityContainer.PrintAbilities();
     }
 }
