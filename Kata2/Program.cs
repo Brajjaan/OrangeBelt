@@ -4,16 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        static void PrintHealthChanged(Character character) // I think this is what was asked??
-        {
-            Console.WriteLine($"{character.Name}'s health is now {character.Health}.");
-        }
-        
-        Character knight = new Character("Knight", 100);
-        Character mage = new Character("Mage", 80);
+        Character knight = new("Knight", 100);
+        Character mage = new("Mage", 80);
 
-        knight.HealthChanged += PrintHealthChanged;
-        mage.HealthChanged += PrintHealthChanged;
+        knight.HealthChanged += Printable.PrintHealthChanged;
+        mage.HealthChanged += Printable.PrintHealthChanged;
 
         Console.WriteLine($"{knight.Name} attacks {mage.Name}!");
         knight.Attack(mage);
