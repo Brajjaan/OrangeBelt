@@ -2,7 +2,7 @@
 
 public class AbilityContainer<T> where T : IAbility
 {
-    private List<T> _abilities = new();
+    private readonly List<T> _abilities = new();
 
     public void AddAbility(T ability)
     {

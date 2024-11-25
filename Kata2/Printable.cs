@@ -1,6 +1,6 @@
 ﻿namespace Kata2;
 
-public static class Printable
+public class Printable
 {
     public static void PrintHealthChanged(Character character)
     {
