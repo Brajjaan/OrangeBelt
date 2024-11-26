@@ -14,11 +14,6 @@ public class AbilityContainer<T> where T : IAbility
         _abilities.Remove(ability);
     }
 
-    public IEnumerable<T> GetAbilities() // I saw this in the C# and .NET features, what's its purpose?
-    {
-        return _abilities;
-    }
-
     public void PrintAbilities()
     {
         foreach (var ability in _abilities)
